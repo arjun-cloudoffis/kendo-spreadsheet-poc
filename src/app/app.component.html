@@ -1,0 +1,49 @@
+<h1>Hello Kendo UI for Angular!</h1>
+
+<!-- <button (click)="loadSpreadsheet()">Load Base64 File</button>
+<kendo-spreadsheet #spreadsheet></kendo-spreadsheet> -->
+
+<!-- <kendo-spreadsheet [sheets]="data"></kendo-spreadsheet> -->
+
+
+<p>
+  <button kendoButton (click)="onImport(spreadsheet, 'JSON')">
+    Import JSON
+  </button>
+  <button kendoButton (click)="onImport(spreadsheet, 'base64')">
+    Import base64
+  </button>
+  <button kendoButton (click)="onImport(spreadsheet, 'base64_2')">
+    Import base64_2
+  </button>
+  <button kendoButton (click)="onImport(spreadsheet, 'ByteArray')">
+    Import ByteArray
+  </button>
+  <button kendoButton (click)="onImport(spreadsheet, 'ByteArray_2')">
+    Import ByteArray_2
+  </button>
+  <button *ngIf="hasSaved" kendoButton (click)="onImport(spreadsheet, 'JSON_SAVE')">
+    Import JSON_SAVE
+  </button>
+  <button *ngIf="hasSaved" kendoButton (click)="onImport(spreadsheet, 'base64_SAVE')">
+    Import base64_SAVE
+  </button>
+  <button *ngIf="hasSaved" kendoButton (click)="onImport(spreadsheet, 'ByteArray_SAVE')">
+    Import ByteArray_Save
+  </button>
+</p>
+<br>
+<p>
+  <button kendoButton (click)="onSave(spreadsheet)">
+    Save JSON
+  </button>
+</p>
+<kendo-spreadsheet
+  #spreadsheet
+  [sheets]="[]"
+  style="height: 420px; width: 100%"
+  (activeSheetChange)="activeSheetChange($event)"
+  (change)="change($event)"
+  enable="false"
+>
+</kendo-spreadsheet>
