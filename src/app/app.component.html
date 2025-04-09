@@ -7,21 +7,28 @@
 
 
 <p>
+  <button kendoButton (click)="onImport(spreadsheet, 'CSV')">
+    Import CSV
+  </button>
+  <br>
   <button kendoButton (click)="onImport(spreadsheet, 'JSON')">
     Import JSON
   </button>
+  <br>
   <button kendoButton (click)="onImport(spreadsheet, 'base64')">
     Import base64
   </button>
   <button kendoButton (click)="onImport(spreadsheet, 'base64_2')">
     Import base64_2
   </button>
+  <br>
   <button kendoButton (click)="onImport(spreadsheet, 'ByteArray')">
     Import ByteArray
   </button>
   <button kendoButton (click)="onImport(spreadsheet, 'ByteArray_2')">
     Import ByteArray_2
   </button>
+  <br>
   <button *ngIf="hasSaved" kendoButton (click)="onImport(spreadsheet, 'JSON_SAVE')">
     Import JSON_SAVE
   </button>
@@ -31,6 +38,12 @@
   <button *ngIf="hasSaved" kendoButton (click)="onImport(spreadsheet, 'ByteArray_SAVE')">
     Import ByteArray_Save
   </button>
+  <button kendoButton (click)="onImport(spreadsheet, 'ByteArray_CSV_20250319223134')">
+    Import ByteArray_CSV csvData_20250319223134
+  </button>
+  <button kendoButton (click)="onImport(spreadsheet, 'ByteArray_CSV_20250319223508')">
+    Import ByteArray_CSV csvData_20250319223508
+  </button>
 </p>
 <br>
 <p>
@@ -38,6 +51,20 @@
     Save JSON
   </button>
 </p>
+<br><br>
+<p>
+  <button kendoButton (click)="edit(spreadsheet)">
+    edit B4
+  </button>
+</p>
+<p>
+  <input type="file" (change)="onFileChange($event)" />
+
+  <button kendoButton (click)="edit(spreadsheet)">
+    Upload
+  </button>
+</p>
+
 <kendo-spreadsheet
   #spreadsheet
   [sheets]="[]"
